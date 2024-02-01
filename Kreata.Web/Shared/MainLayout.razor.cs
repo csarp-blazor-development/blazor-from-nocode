@@ -14,6 +14,14 @@ namespace Kreata.Web.Shared
             _drawerOpen = !_drawerOpen;
         }
 
+        private string GetThemeName()
+        {
+            if (_isCurrentLightTheme)
+                return "light";
+            else
+                return "dark";
+        }
+
         private void SetCurrentTheme()
         {
             if (_isCurrentLightTheme)
