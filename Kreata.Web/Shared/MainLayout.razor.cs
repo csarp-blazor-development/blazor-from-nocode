@@ -14,6 +14,17 @@ namespace Kreata.Web.Shared
             _drawerOpen = !_drawerOpen;
         }
 
+        private void SetCurrentTheme()
+        {
+            if (_isCurrentLightTheme)
+            {
+                _currentTheme = _lightMudTheme;
+            }
+            else
+            {
+                _currentTheme = _darkMudTheme;
+            }
+        }
         private void InitializeDarkTheme()
         {
             _darkMudTheme = new MudTheme()
