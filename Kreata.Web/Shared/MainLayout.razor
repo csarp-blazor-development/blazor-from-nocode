@@ -6,9 +6,9 @@
 
 <MudLayout>
     <MudAppBar>
-        My Application
-    </MudAppBar>
-    <MudDrawer Open="true">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="DrawerToggle" />
+            </MudAppBar>
+    <MudDrawer Open="_drawerOpen">
 
     </MudDrawer>
     <MudMainContent>
