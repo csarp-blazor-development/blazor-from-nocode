@@ -20,6 +20,9 @@ namespace Kreata.Web.Shared
         {
             await SetCurrentThemeFromLocalStorage();
             await base.OnInitializedAsync();
+            InitializeLightTheme();
+            InitializeDarkTheme();
+            SetCurrentTheme();
         }
 
         private async Task ChangeThemeAsync()
