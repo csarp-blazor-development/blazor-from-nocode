@@ -16,6 +16,16 @@ namespace Kreata.Web.Shared
         {
             _drawerOpen = !_drawerOpen;
         }
+        private async Task ChangeThemeAsync()
+        {
+            _isCurrentLightTheme = !_isCurrentLightTheme;
+            SetCurrentTheme();
+
+            if (LocalStorage is not null)
+            {
+                await LocalStorage.SetItemAsStringAsync("theme", GetThemeName());
+            }
+        }
 
         private string GetThemeName()
         {
