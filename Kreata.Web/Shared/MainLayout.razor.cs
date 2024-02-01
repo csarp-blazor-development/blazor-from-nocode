@@ -27,6 +27,16 @@ namespace Kreata.Web.Shared
             }
         }
 
+        private async Task SetCurrentThemeFromLocalStorage()
+        {
+            string themeName = "light";
+            if ((LocalStorage is not null) && (await LocalStorage.ContainKeyAsync("theme")))
+            {
+                themeName = await LocalStorage.GetItemAsStringAsync("theme");
+            }
+            _isCurrentLightTheme = themeName == "light" ? true : false;
+        }
+
         private string GetThemeName()
         {
             if (_isCurrentLightTheme)
