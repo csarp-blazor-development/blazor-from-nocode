@@ -1,3 +1,5 @@
+using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
 namespace Kreata.Web.Shared
@@ -9,6 +11,7 @@ namespace Kreata.Web.Shared
         private MudTheme _darkMudTheme = new MudTheme();
         private MudTheme _lightMudTheme = new MudTheme();
         private MudTheme _currentTheme = new MudTheme();
+        [Inject] public ILocalStorageService? LocalStorage { get; set; }
         private void DrawerToggle()
         {
             _drawerOpen = !_drawerOpen;
