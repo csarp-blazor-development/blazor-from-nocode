@@ -16,9 +16,10 @@ namespace Kreata.Web.Shared
         {
             _drawerOpen = !_drawerOpen;
         }
-        protected override Task OnInitializedAsync()
+        protected async override Task OnInitializedAsync()
         {
-            return base.OnInitializedAsync();
+            await SetCurrentThemeFromLocalStorage();
+            await base.OnInitializedAsync();
         }
 
         private async Task ChangeThemeAsync()
