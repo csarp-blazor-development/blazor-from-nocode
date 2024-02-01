@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using Kreata.Web;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -11,5 +12,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 //MudBlazor
 builder.Services.AddMudServices();
+// Local storage
+builder.Services.AddBlazoredLocalStorage();
 
 await builder.Build().RunAsync();
